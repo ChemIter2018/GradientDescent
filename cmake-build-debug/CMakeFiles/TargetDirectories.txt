@@ -1,0 +1,3 @@
+C:/Clion/GradientDescent/cmake-build-debug/CMakeFiles/GradientDescent.dir
+C:/Clion/GradientDescent/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Clion/GradientDescent/cmake-build-debug/CMakeFiles/rebuild_cache.dir
