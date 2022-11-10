@@ -11,9 +11,8 @@ Gradient Descent
 
 <img width="800" alt="Excel_GB" src="https://user-images.githubusercontent.com/42182243/200778289-295901ca-2563-41fa-8da4-1fc7e705e14f.png">
 
-<img width="800" alt="Excel_GB" src="https://user-images.githubusercontent.com/42182243/201011404-203f032e-c4a1-4744-ab95-f5aaf175725e.gif">
-
 <img width="800" alt="JAVA" src="https://user-images.githubusercontent.com/42182243/200789220-d38a2550-0dc3-4190-bcb9-3e025fb36910.gif">
+<img width="800" alt="Excel_GB" src="https://user-images.githubusercontent.com/42182243/201011404-203f032e-c4a1-4744-ab95-f5aaf175725e.gif">
 
 <img width="800" alt="JAVA" src="https://user-images.githubusercontent.com/42182243/200778325-ae1533a6-0da7-48ac-a279-5ca00e65f88e.png">
 
