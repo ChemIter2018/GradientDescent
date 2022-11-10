@@ -6,18 +6,17 @@
 
 using namespace std;
 
-double compute_error_for_line_given_points(double a, double b, double c, vector<double> x, vector<double> y) {
-    double totalError = 0.0;
+void compute_error_for_line_given_points(double a, double b, double c, vector<double> x, vector<double> y,
+                                         double &totalError) {
+    totalError = 0.0;
     unsigned int length_x = x.size();
     for (int i = 0; i < length_x; i++) {
         totalError += pow((y[i] - (a + b * x[i] + c * x[i] * x[i])), 2.0);
     }
-    return totalError;
 }
 
-vector<double> step_gradient(double a_current, double b_current, double c_current, vector<double> x, vector<double> y,
-                             double learningRate) {
-    vector<double> newParameters(3);
+void step_gradient(double a_current, double b_current, double c_current, vector<double> x, vector<double> y,
+                             double learningRate, double *newParameters) {
     double a_gradient  = 0.0;
     double b_gradient  = 0.0;
     double c_gradient  = 0.0;
@@ -30,23 +29,21 @@ vector<double> step_gradient(double a_current, double b_current, double c_curren
     newParameters[0] = a_current - (learningRate * 2 * a_gradient);
     newParameters[1] = b_current - (learningRate * 2 * b_gradient);
     newParameters[2] = c_current - (learningRate * 2 * c_gradient);
-    return newParameters;
 }
 
-vector<double> gradient_descent_runner(const vector<double>& x, const vector<double>& y, double starting_a,
+void gradient_descent_runner(const vector<double>& x, const vector<double>& y, double starting_a,
                                        double starting_b, double starting_c, double learning_rate, int num_iterations,
-                                       double sum_squared_error) {
-    vector<double> finalParameters(3);
+                                       double sum_squared_error, double *finalParameters) {
     finalParameters[0] = starting_a;
     finalParameters[1] = starting_b;
     finalParameters[2] = starting_c;
 
     double totalError;
     for (int i = 0; i < num_iterations; ++i) {
-        finalParameters = step_gradient(finalParameters[0], finalParameters[1],
-                                        finalParameters[2], x, y, learning_rate);
-        totalError = compute_error_for_line_given_points(finalParameters[0], finalParameters[1],
-                                                         finalParameters[2], x, y);
+        step_gradient(finalParameters[0], finalParameters[1], finalParameters[2], x, y,
+                      learning_rate, finalParameters);
+        compute_error_for_line_given_points(finalParameters[0], finalParameters[1], finalParameters[2], x, y,
+                                            totalError);
         if (i % 50000 == 0) {
             printf("After %d iterations a = %.10f, b = %.10f, c = %.10f, error = %.10f\n", i, finalParameters[0],
                    finalParameters[1], finalParameters[2], totalError);
@@ -57,7 +54,6 @@ vector<double> gradient_descent_runner(const vector<double>& x, const vector<dou
             break;
         }
     }
-    return finalParameters;
 }
 
 int main() {
@@ -73,15 +69,15 @@ int main() {
     double initial_c = 3;
     int numIterations = 1000000;
     double sumSquaredError = 1.0e-10;
-    double initialError = compute_error_for_line_given_points(initial_a, initial_b, initial_c, x, y);
+    double initialError = 0.0;
+    compute_error_for_line_given_points(initial_a, initial_b, initial_c, x, y, initialError);
     // Run Gradient Descent
-    vector<double> finalParameters(3);
+    auto *finalParameters = new double[3];
     printf("starting gradient descent at a = %.10f, b = %.10f, c = %.10f, error = %.10f\n", initial_a, initial_b,
            initial_c, initialError);
     printf("Running...\n");
-    finalParameters = gradient_descent_runner(x, y, initial_a, initial_b, initial_c,
-                                              learningRate,numIterations,
-                                              sumSquaredError);
+    gradient_descent_runner(x, y, initial_a, initial_b, initial_c, learningRate,
+                            numIterations, sumSquaredError, finalParameters);
     printf("a = %.10f, b = %.10f, c = %.10f\n", finalParameters[0], finalParameters[1], finalParameters[2]);
     // Run time
     endTime = clock();

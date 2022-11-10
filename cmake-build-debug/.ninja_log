@@ -1,3 +1,17 @@
 # ninja log v5
 10	910	6896817744554537	CMakeFiles/GradientDescent.dir/main.cpp.obj	bfaf444f0f116993
 912	1714	6896817752414006	GradientDescent.exe	b1fc9402505a4a70
+10	1056	6897632836166079	CMakeFiles/GradientDescent.dir/main.cpp.obj	bfaf444f0f116993
+1058	2099	6897632846202509	GradientDescent.exe	b1fc9402505a4a70
+9	742	6897633215428067	CMakeFiles/GradientDescent.dir/main.cpp.obj	bfaf444f0f116993
+743	1433	6897633221993485	GradientDescent.exe	b1fc9402505a4a70
+8	724	6897644101728214	CMakeFiles/GradientDescent.dir/main.cpp.obj	bfaf444f0f116993
+726	1428	6897644108370849	GradientDescent.exe	b1fc9402505a4a70
+8	813	6897646391676878	CMakeFiles/GradientDescent.dir/main.cpp.obj	bfaf444f0f116993
+815	1520	6897646398380571	GradientDescent.exe	b1fc9402505a4a70
+8	756	6897651421490073	CMakeFiles/GradientDescent.dir/main.cpp.obj	bfaf444f0f116993
+758	1464	6897651428211801	GradientDescent.exe	b1fc9402505a4a70
+8	769	6897651643310844	CMakeFiles/GradientDescent.dir/main.cpp.obj	bfaf444f0f116993
+770	1507	6897651650304682	GradientDescent.exe	b1fc9402505a4a70
+8	669	6897652539845037	CMakeFiles/GradientDescent.dir/main.cpp.obj	bfaf444f0f116993
+670	1231	6897652545130570	GradientDescent.exe	b1fc9402505a4a70
