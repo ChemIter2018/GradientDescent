@@ -11,7 +11,6 @@ def print_run_time(func):
 
 
 # y = a + bx + cx^2
-# m is slope, b is y-intercept
 def compute_error_for_line_given_points(a, b, c, points):
     totalError = 0
     for i in range(0, len(points)):
